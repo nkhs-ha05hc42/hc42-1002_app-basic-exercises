@@ -20,6 +20,7 @@ const get832 = (req, res) => {
     const fruit = fruits.find(f => f.en === fruitName);
 
     if (fruit) {
+        
         res.send(JSON.stringify(fruit));
     } else {
         res.send(JSON.stringify({
