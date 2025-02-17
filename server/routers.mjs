@@ -10,6 +10,7 @@ import {
     q8_1_4Controller,
     q8_2Controller,
     q8_3Controller,
+    q9_7Controller,
  } from "./api/controllers.mjs"
 
 const routers = express.Router()
@@ -33,7 +34,12 @@ routers.post("/api/8-2", q8_2Controller.post822)
 routers.put("/api/8-2", q8_2Controller.put823)
 routers.delete("/api/8-2", q8_2Controller.delete824)
 routers.get("/api/8-3", q8_3Controller.get831)
-routers.get("/api/8-3", q8_3Controller.get832)
+routers.get("/api/8-3/:name", q8_3Controller.get832)
+routers.get("/api/9-7/:id", q9_7Controller.getOne971)
+routers.get("/api/9-7", q9_7Controller.getAll971)
+routers.post("/api/9-7", q9_7Controller.post973)
+routers.put("/api/9-7/:id", q9_7Controller.put974)
+routers.delete("/api/9-7/:id", q9_7Controller.delete975)
 
 // client配下は、ブラウザサイドで実行されるファイル（HTML/JS/CSS/画像など）を配置する
 routers.use(express.static(`${path.resolve()}/client`))
